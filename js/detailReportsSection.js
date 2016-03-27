@@ -107,6 +107,8 @@ detailReportsSection.prototype.show = function(item,callBack) {
 detailReportsSection.prototype.hide = function(callBack) {
     var thisO = this;
 
+    $("#report-env").hide();
+
     thisO._object.fadeOut('fast', function(){
         callBack && callBack();
     });

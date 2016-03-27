@@ -60,3 +60,13 @@
     text-align: center;
     padding: 20px 15px;
 }
+
+#detail-reports-section #report-env{
+    display: inline-block;
+    border-bottom: 1px solid #ccc;
+    list-style: none;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    padding: 20px 15px;
+}

@@ -137,8 +137,10 @@ addReportsSection.prototype._initEvents = function() {
                         'respuesta':'',
                         };
 
-            idReporte=idReporte+1;         
-            
+            var item=window.reportsData["reporteNuevo" + idReporte.toString()];  
+
+            idReporte=idReporte+1;    
+               
             // fecha: 21/12/15 05:15 am
             //getDate()   Devuelve el dia del mes (entre el 1 y el 31)
             //getDay()    Devuelve el dia de la semana (entre el 0 y el 6)
@@ -147,6 +149,10 @@ addReportsSection.prototype._initEvents = function() {
             //getHours()  Devuelve la hora (entre el 0 y el 24)
             //getMinutes() Devuelve los minutos
 
+            thisO.hide(function(){
+                $("#report-env").show();
+                window.detailReportsSection.show(item);
+            });
         }
 
     });
