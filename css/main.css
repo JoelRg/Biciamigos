@@ -1,0 +1,190 @@
+/* Globales */
+@font-face {
+  font-family: 'Raleway-Medium-gen';
+  src: url('../fonts/Raleway-Medium/Raleway-Medium.eot');
+  src: url('../fonts/Raleway-Medium/Raleway-Medium.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Raleway-Medium/Raleway-Medium.woff2') format('woff2'),
+       url('../fonts/Raleway-Medium/Raleway-Medium.woff') format('woff'),
+       url('../fonts/Raleway-Medium/Raleway-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, dialog, figure, header, footer, hgroup, menu, nav, section, time, mark, audio, video
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-family: 'Raleway-Medium-gen', arial, helvetica, sans-serif;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 16px;
+}
+
+body {
+    /*background: #222;*/
+    background: #FFF;
+}
+
+.no-display {
+    display: none;
+}
+
+.mini-loader {
+    background: url('../img/mini-loader.gif');
+    width: 20px;
+    height: 20px;
+    display: none;
+}
+
+
+/* Init page with icon */
+#init-phone {
+    background: #FFF url('../img/init-phone.jpg') no-repeat;
+    display: inline-block;
+    position: relative;
+    width: 360px;
+    height: 640px;
+    background-size: 360px 640px;
+}
+
+#init-phone .app-icon {
+    position: absolute;
+    bottom: 222px;
+    right: 19px;
+    cursor: pointer;
+}
+
+#init-phone .app-icon img {
+    width: 57px;
+    cursor: pointer;
+}
+
+
+
+/* Loading page */
+#loading-app {
+    background: #fff;
+    position: relative;
+    width: 360px;
+    height: 640px;
+    padding-top: 200px;
+}
+
+#loading-app .logo-loader {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#loading-app #loading-loader {
+    margin: 40px auto 0;
+    width: 80%;
+}
+
+#loading-app #loading-loader .progress-bar-warning {
+    background-color: #ff9900;
+}
+
+
+
+
+/* Navs */
+#nav-top {
+    background: #FFF;
+    box-shadow: 0 1px 3px #444;
+    padding: 7px 0 10px 12px;
+    position: fixed;
+    width: 100%;
+    z-index: 998;
+}
+
+#nav-top #menu-toggle {
+    cursor: pointer;
+    color: #444;
+    font-size: 19px;
+    padding: 2px;
+}
+
+#nav-top #nav-top-title {
+    padding-top: 2px;
+}
+
+#nav-top #search {
+    cursor: pointer;
+    color: #444;
+    font-size: 19px;
+    padding: 2px 0;
+}
+
+#nav-bottom {
+    background: #FFF;
+    box-shadow: 0 -1px 3px #9D9D9D;
+    position: fixed;
+    width: 100%;
+    z-index: 1501;
+    bottom: 0;
+}
+
+#nav-bottom div {
+    font-size: 11px;
+}
+
+#nav-bottom .nav-bottom-button {
+    cursor: pointer;
+    padding-bottom: 6px;
+    padding-top: 6px
+}
+
+#nav-bottom .nav-bottom-button:active {
+    background-color: #FFF7D6;
+}
+
+#nav-bottom div.text {
+    text-align: center;
+}
+
+#nav-bottom div.img {
+    margin: 0 auto 2px;
+    width: 25px;
+    height: 25px;
+}
+
+#nav-bottom #show-map div.img {
+    background: url("../img/nav-bottom-buttons-sprite.png") no-repeat scroll 2px 0;
+}
+
+#nav-bottom #near-me div.img {
+    background: url("../img/nav-bottom-buttons-sprite.png") no-repeat scroll -47px 0;
+}
+
+#nav-bottom #report div.img {
+    background: url("../img/nav-bottom-buttons-sprite.png") no-repeat scroll -97px 0;
+}
+
+
+
+
+#sambil {
+    background: url('../img/maps/searches/case-01/sambil-map-16.png') no-repeat;
+    width: 175px;
+    height: 447px;
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    z-index: 95;
+    left: 968px;
+    top: 279px;
+}
+
+#endPointer {
+    background: url('../img/map-pin.png') no-repeat;
+    width: 28px;
+    height: 39px;
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    z-index: 96;
+    left: 953px;
+    top: 706px;
+}

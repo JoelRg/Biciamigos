@@ -1,0 +1,82 @@
+#bikeRoads-section {
+    display: none;
+    background: #FFF;
+    width: 100%;
+    min-height: 640px;
+    z-index: 1500;
+    position: absolute;
+    top: 0;
+}
+
+#bikeRoads-section .nav-top {
+    color: #FFF;
+    background: #ff9900;
+    background: linear-gradient(#ff9900, #ff6600);
+    padding: 7px 0 10px 12px;
+    /*border-bottom: 1px solid #CCC;*/
+    border-bottom: 1px solid #707070;
+}
+
+#bikeRoads-section .nav-top #bkr-back{
+    cursor: pointer;
+    /*color: #444;*/
+    color: #FFF;
+    font-size: 19px;
+    padding: 2px;
+}
+
+#bikeRoads-section .nav-top #bkr-title{
+    padding: 2px;
+}
+
+
+#bikeRoads-section .always-show {
+    padding: 40px 20px;
+    border-bottom: 1px solid #CCC;
+}
+
+#bikeRoads-section .always-show > div {
+    cursor: pointer;
+    background: transparent url("../img/checkbox.png") no-repeat 0px -23px;
+    padding-left: 34px;
+    margin-left: 40px;
+}
+
+#bikeRoads-section .always-show > div.checked {
+    background: transparent url("../img/checkbox.png") no-repeat 0 0;
+}
+
+
+#bikeRoads-section .bikeroads {
+
+}
+
+#bikeRoads-section .bikeroads ul li.bike-road {
+    display: inline-block;
+    border-bottom: 1px solid #ccc;
+    list-style: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    text-align: left;
+    padding: 20px 15px;
+}
+
+#bikeRoads-section .bikeroads ul li.bike-road:active {
+    background-color: #FFF7D6;
+}
+
+#bikeRoads-section .bikeroads ul li.bike-road:last-child {
+    /*border-bottom: 0 none;*/
+}
+
+#bikeRoads-section .bikeroads ul li.bike-road .bkr-data {
+    width: 100%;
+    background: url("../img/bike-road-icon.png") no-repeat scroll 0 0;
+    padding: 0 0 3px 50px;
+}
+
+#bikeRoads-section .bikeroads ul li.bike-road .bkr-data .name {
+
+}
+

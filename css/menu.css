@@ -1,0 +1,111 @@
+#menu-overlay {
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+}
+
+div#menu-sidebar {
+    width: 100%;
+}
+
+div#menu-sidebar nav {
+    background:#FFF;
+    width: 80%;
+    height: 100%;
+    left: -100%;
+    overflow: hidden;
+    position: fixed;
+    box-shadow: 1px 0 4px #666;
+    z-index: 10001;
+}
+
+div#menu-sidebar nav .user {
+    margin: 20px 0px 20px 20px;
+    display: inline-block;
+}
+
+div#menu-sidebar nav .user img {
+    float: left;
+}
+
+div#menu-sidebar nav .user .user-info {
+    float: left;
+    margin-left: 20px;
+    margin-top: 25px;
+}
+
+div#menu-sidebar nav ul {
+    padding: 0;
+    list-style:none;
+    margin-top: 22px;
+}
+
+div#menu-sidebar nav ul li {
+    position: relative;
+    cursor: pointer;
+    padding: 20px 0 20px 70px;
+    background: transparent url('../img/menu-sprite.png') no-repeat;
+}
+
+div#menu-sidebar nav ul li:active {
+    background-color: #FFF7D6;
+}
+
+div#menu-sidebar nav ul li.bikeStations {
+    background-position: 26px 19px;
+}
+
+div#menu-sidebar nav ul li.bikeRoads {
+    background-position: 26px -27px;
+}
+
+div#menu-sidebar nav ul li.history {
+    background-position: 26px -72px;
+}
+
+div#menu-sidebar nav ul li.reports {
+    background-position: 26px -119px;
+}
+
+div#menu-sidebar nav ul li.about {
+    background-position: 26px -164px;
+}
+
+div#menu-sidebar nav ul li a {
+    color: #000;
+    display: block;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+div#menu-sidebar nav ul li a:hover,
+div#menu-sidebar nav ul li a:active,
+div#menu-sidebar nav ul li a:visited {
+    color:#000;
+    text-decoration:none;
+}
+
+@media screen and (max-width: 800px) {
+
+    div#menu-sidebar nav {
+        width: 80%;
+        position: fixed;
+        right:100%;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    div#menu-sidebar nav ul li {
+        display: block;
+        border-bottom:1px solid rgba(255,255,255,.5);
+    }
+
+    div#menu-sidebar nav ul li a {
+        display: block;
+    }
+}

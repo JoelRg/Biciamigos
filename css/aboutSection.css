@@ -1,0 +1,44 @@
+#about-section {
+    display: none;
+    background: #FFF;
+    width: 100%;
+    min-height: 640px;
+    z-index: 1500;
+    position: absolute;
+    top: 0;
+}
+
+#about-section .nav-top {
+    color: #FFF;
+    background: #ff9900;
+    background: linear-gradient(#ff9900, #ff6600);
+    padding: 7px 0 10px 12px;
+    /*border-bottom: 1px solid #CCC;*/
+    border-bottom: 1px solid #707070;
+}
+
+#about-section .nav-top #about-back{
+    cursor: pointer;
+    /*color: #444;*/
+    color: #FFF;
+    font-size: 19px;
+    padding: 2px;
+}
+
+#about-section .nav-top #about-title{
+    padding: 2px;
+}
+
+#about-section .logo {
+    margin: 20px auto 40px;
+    text-align: center;
+}
+
+#about-section .msj,
+#about-section .copyright {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 20px 0;
+    padding: 0 30px;
+    text-align: left;
+}

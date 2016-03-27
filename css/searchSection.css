@@ -1,0 +1,143 @@
+#search-section {
+    display: none;
+    background: transparent;
+    width: 100%;
+    z-index: 2000;
+    position: absolute;
+    top: 0;
+}
+
+#search-section #nav-search {
+    color: #FFF;
+    background: #ff9900;
+    background: linear-gradient(#ff9900, #ff6600);
+    padding: 7px 0 7px 12px;
+    /*box-shadow: 0 1px 3px #444;*/
+    border-bottom: 1px solid #707070;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+#search-section #nav-search #search-back{
+    cursor: pointer;
+    /*color: #444;*/
+    color: #FFF;
+    font-size: 19px;
+    padding: 2px;
+}
+
+
+#search-section #nav-search #search-fields * {
+    font-size: 14px;
+}
+
+#search-section #nav-search #search-fields .from,
+#search-section #nav-search #search-fields .to {
+    background: #FFF;
+    width: 94%;
+    padding: 2px 6px;
+    border: 1px solid #777;
+    color: #444;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+#search-section #nav-search #search-fields .from {
+    display: none;
+}
+
+#search-section #nav-search #search-fields .from label,
+#search-section #nav-search #search-fields .to label {
+    color: #888;
+    cursor: pointer;
+}
+
+#search-section #nav-search #search-fields input {
+    width: 186px;
+    border: 0px none;
+}
+
+#search-section #nav-search #search-fields .from input {
+    margin-left: 21px;
+}
+
+#search-section #nav-search #search-fields .to input {
+    margin-left: 26px;
+    width: 185px;
+}
+
+#search-section #nav-search #search-fields .data-path {
+    margin-top: 0px; /* 12px;*/
+    display: none;
+}
+
+#search-section #nav-search #search-fields .data-path > div {
+    float: left;
+}
+
+#search-section #nav-search #search-fields .data-path .distance {
+    float: left;
+    margin-right: 40px;
+    margin-left: 70px;
+}
+
+
+
+#search-section .search-content {
+    position: absolute;
+    background: #FFF;
+    min-height: 640px;
+    z-index: 9;
+    width: 100%;
+    display: none;
+}
+
+
+
+#search-section .search-list {
+    margin-top: 80px;
+}
+
+#search-section .search-list li {
+    display: inline-block;
+    border-top: 1px solid #ccc;
+    list-style: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    text-align: left;
+    padding: 20px 15px;
+}
+
+#search-section .search-list li:active {
+    background-color: #FFF7D6;
+}
+
+#search-section .search-list li:last-child {
+    border-bottom: 1px solid #ccc;
+}
+
+#search-section .search-list li .searchItem-data {
+    width: 100%;
+    background: url("../img/history-icon.png") no-repeat scroll 0 0;
+    padding: 0 0 3px 37px;
+}
+
+
+
+
+
+#search-section .search-content .mini-loader {
+    margin: 140px auto;
+}
+
+
+#virtualKeyBoard {
+    position: fixed;
+    bottom: 0;
+    z-index: 2001;
+    display: none;
+    box-shadow: 0 -1px 3px #444;
+}

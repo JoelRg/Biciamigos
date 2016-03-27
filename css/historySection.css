@@ -1,0 +1,69 @@
+#history-section {
+    display: none;
+    background: #FFF;
+    width: 100%;
+    min-height: 640px;
+    z-index: 1500;
+    position: absolute;
+    top: 0;
+}
+
+#history-section .nav-top {
+    color: #FFF;
+    background: #ff9900;
+    background: linear-gradient(#ff9900, #ff6600);
+    padding: 7px 0 10px 12px;
+    /*border-bottom: 1px solid #CCC;*/
+    border-bottom: 1px solid #707070;
+}
+
+#history-section .nav-top #history-back{
+    cursor: pointer;
+    /*color: #444;*/
+    color: #FFF;
+    font-size: 19px;
+    padding: 2px;
+}
+
+#history-section .nav-top #history-title{
+    padding: 2px;
+}
+
+#history-section .history-list {
+
+}
+
+#history-section .history-list ul li.history-entry {
+    display: inline-block;
+    border-bottom: 1px solid #ccc;
+    list-style: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    text-align: left;
+    padding: 20px 15px;
+}
+
+#history-section .history-list ul li.history-entry:active {
+    background-color: #FFF7D6;
+}
+
+#history-section .history-list ul li.history-entry:last-child {
+    /*border-bottom: 0 none;*/
+}
+
+#history-section .history-list ul li.history-entry .historyEntry-data {
+    width: 100%;
+    background: url("../img/history-icon.png") no-repeat scroll 0 0;
+    padding: 0 0 3px 37px;
+}
+
+#history-section .history-list ul li.history-entry .historyEntry-data .name {
+
+}
+
+#history-section .no-history {
+    display: none;
+    text-align: center;
+    margin: 100px 0 0;
+}

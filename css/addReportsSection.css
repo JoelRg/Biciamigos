@@ -1,0 +1,72 @@
+#add-reports-section {
+    display: none;
+    background: #FFF;
+    width: 100%;
+    min-height: 640px;
+    z-index: 1500;
+    position: absolute;
+    top: 0;
+}
+
+#add-reports-section .nav-top {
+    color: #FFF;
+    background: #ff9900;
+    background: linear-gradient(#ff9900, #ff6600);
+    padding: 7px 0 10px 12px;
+    /*border-bottom: 1px solid #CCC;*/
+    border-bottom: 1px solid #707070;
+}
+
+#add-reports-section .nav-top #add-reports-back{
+    cursor: pointer;
+    /*color: #444;*/
+    color: #FFF;
+    font-size: 19px;
+    padding: 2px;
+}
+
+#add-reports-section .nav-top #add-reports-title{
+    padding: 2px;
+}
+
+#add-reports-section .reports-list {
+
+}
+
+#add-reports-section .no-reports {
+    display: none;
+    text-align: center;
+    margin: 100px 0 0;
+}
+
+#add-reports-section .add-reports-form form ul li{
+    display: inline-block;
+    list-style: none;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    padding: 20px 15px;
+    padding-bottom: 0px;
+}
+
+#add-reports-section .add-reports-form form ul li label:first-child{
+    width: 100%;
+}
+
+#add-reports-section .add-reports-form form button{
+    margin-top: 20px;
+    color: #FFF;
+    background: linear-gradient(#ff9900, #ff6600);
+    border: 1px solid #707070;
+}
+#add-reports-section .add-reports-form form{
+    text-align: center;
+}
+
+#add-reports-section .add-reports-form form ul li input{
+    width: 90%;
+}
+#add-reports-section .add-reports-form form ul li span{
+
+font-size: 12px;
+}

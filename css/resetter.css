@@ -1,0 +1,116 @@
+/* --
+CSS Reseter
+CSSLab © 2010 by Jorge Epuñan
+http://www.csslab.cl/2010/06/01/css-reseter-v2/
+-- */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, dialog, figure, header, footer, hgroup, menu, nav, section, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-family: arial, helvetica, sans-serif;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+}
+
+body {
+    font-size: 80%;
+}
+
+h1 {font-size: 200%}
+h2 {font-size: 180%;}
+h3 {font-size: 165%;}
+h4 {font-size: 135%;}
+h5 {font-size: 112%;}
+h6 {font-size: 100%;}
+h2,h3,h4,h5,h6 {margin: 10px 0; padding: 0;}
+
+article, aside, nav, section, dialog, figure, figcaption, header, footer, hgroup {
+    display:block;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+caption, th, td {
+    font-weight: normal;
+}
+
+a img, iframe {
+    border: none;
+}
+
+ul {
+    list-style: none;
+}
+
+input, textarea, select, button {
+    font-size: 100%;
+    font-family: inherit;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+input.placeholder {
+    color: #B2B2B2;
+}
+
+select {
+    margin: inherit;
+}
+
+button {
+    border: 1px solid #333;
+    padding: 3px 5px;
+    background: #CCC;
+    cursor: pointer;
+}
+
+/*Hack to FireFox to border dotted*/
+button::-moz-focus-inner, input::-moz-focus-inner,
+select::-moz-focus-inner, textarea::-moz-focus-inner {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+:focus {
+    outline: 0;
+}
+
+/* Fixes incorrect placement of numbers in ol's in IE6/7 */
+ol { margin-left:2em; }
+
+
+/* ========================================= clearfix == */
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {display: inline-block;}
+
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+
+
+/* Shapes */
+.arrow-up {
+    border-bottom: 7px solid #FFFFFF;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    width: 0;
+}

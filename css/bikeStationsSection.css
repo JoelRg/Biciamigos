@@ -1,0 +1,91 @@
+#bikeStations-section {
+    display: none;
+    background: #FFF;
+    width: 100%;
+    min-height: 640px;
+    z-index: 1500;
+    position: absolute;
+    top: 0;
+}
+
+#bikeStations-section .nav-top {
+    color: #FFF;
+    background: #ff9900;
+    background: linear-gradient(#ff9900, #ff6600);
+    padding: 7px 0 10px 12px;
+    /*border-bottom: 1px solid #CCC;*/
+    border-bottom: 1px solid #707070;
+}
+
+#bikeStations-section .nav-top #bks-back{
+    cursor: pointer;
+    /*color: #444;*/
+    color: #FFF;
+    font-size: 19px;
+    padding: 2px;
+}
+
+#bikeStations-section .nav-top #bks-title{
+    padding: 2px;
+}
+
+#bikeStations-section .nav-top #bks-refresh{
+    cursor: pointer;
+    /*color: #444;*/
+    color: #FFF;
+    font-size: 19px;
+    padding: 2px 0;
+}
+
+
+
+#bikeStations-section .bikestations {
+
+}
+
+#bikeStations-section .bikestations ul li.bike-station {
+    display: inline-block;
+    border-bottom: 1px solid #ccc;
+    list-style: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    text-align: left;
+}
+
+#bikeStations-section .bikestations ul li.bike-station:active {
+    background-color: #FFF7D6;
+}
+
+#bikeStations-section .bikestations ul li.bike-station:last-child {
+    border-bottom: 0 none;
+}
+
+#bikeStations-section .bikestations ul li.bike-station .bks-data {
+    float: left;
+    width: 80%;
+}
+
+#bikeStations-section .bikestations ul li.bike-station .bks-data .name {
+    margin-bottom: 10px;
+}
+
+#bikeStations-section .bikestations ul li.bike-station .bks-data table.data td {
+    font-size: 13px;
+    text-align: left;
+}
+
+#bikeStations-section .bikestations ul li.bike-station .bks-data table.data td.number {
+    padding-left: 12px;
+}
+
+#bikeStations-section .bikestations ul li.bike-station .bks-other {
+    float: left;
+    width: 20%;
+    padding-right: 10px;
+    text-align: right;
+}
+
+#bikeStations-section .mini-loader {
+    margin: 20px auto;
+}

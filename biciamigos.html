@@ -1,0 +1,419 @@
+<!DOCTYPE>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta content="es" http-equiv="Content-Language">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Biciamigos</title>
+
+        <link rel="shorcut icon" href="img/favicon.png">
+        <link rel="stylesheet" type="text/css" href="libs/bootstrap-3.3.6/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="libs/jquery/ui/1.11.4/jquery-ui.css">
+        <link rel="stylesheet" type="text/css" href="libs/tipped-4.5.4-light/css/tipped/tipped.css"/>
+        <link rel="stylesheet" type="text/css" href="libs/onscreenkeyboard/css/jsKeyboard.css"/>
+        <link rel="stylesheet" type="text/css" href="css/estilos.css">
+
+        <script type="text/javascript" src="libs/jquery/1.12.0/jquery.min.js"></script>
+        <script type="text/javascript" src="libs/jquery/ui/1.11.4/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="libs/jquery/jquery-visible/jquery.visible.min.js"></script>
+        <script type="text/javascript" src="libs/bootstrap-3.3.6/dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="libs/tipped-4.5.4-light/js/tipped/tipped.js"></script>
+        <script type="text/javascript" src="libs/onscreenkeyboard/js/jsKeyboard.js"></script>
+
+        <script type="text/javascript" src="js/navTop.js"></script>
+        <script type="text/javascript" src="js/navBottom.js"></script>
+        <script type="text/javascript" src="js/menuSidebar.js"></script>
+        <script type="text/javascript" src="js/bikeStation.js"></script>
+        <script type="text/javascript" src="js/bikeRoad.js"></script>
+        <script type="text/javascript" src="js/map.js"></script>
+        <script type="text/javascript" src="js/searchSection.js"></script>
+        <script type="text/javascript" src="js/bikeStationsSection.js"></script>
+        <script type="text/javascript" src="js/bikeRoadsSection.js"></script>
+        <script type="text/javascript" src="js/searchSection.js"></script>
+        <script type="text/javascript" src="js/historySection.js"></script>
+        <script type="text/javascript" src="js/aboutSection.js"></script>
+        <script type="text/javascript" src="js/reportsSection.js"></script>
+        <script type="text/javascript" src="js/addReportsSection.js"></script>
+        <script type="text/javascript" src="js/detailReportsSection.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+    </head>
+    <body>
+
+        <!-- Init page with icon -->
+        <div id='init-phone'>
+            <div class="app-icon">
+                <img src='img/app-icon.png' />
+            </div>
+        </div>
+
+        <!-- Loading page -->
+        <div id='loading-app' class='no-display'>
+
+            <div class='logo-loader'>
+                <img src='img/logo-medium.png' />
+            </div>
+
+            <div id='loading-loader' class="progress">
+              <div class="progress-bar progress-bar-warning progress-bar-striped"
+                role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
+                <span class="sr-only">10%</span>
+              </div>
+            </div>
+
+        </div>
+
+
+        <!-- Menu sidebar -->
+        <div id='menu-sidebar'>
+            <nav>
+                <div class='user'>
+                    <img src='img/user.png' />
+
+                    <div class='user-info'>
+                        <p>Hola Jemi</p>
+                    </div>
+                </div>
+
+                <ul class='sections'>
+                    <li class='bikeStations'>
+                        <a>Estaciones</a>
+                    </li>
+                    <li class='bikeRoads'>
+                        <a>Ciclovías</a>
+                    </li>
+                    <li class='history'>
+                        <a>Historial</a>
+                    </li>
+                    <li class='reports'>
+                        <a>Reportes</a>
+                    </li>
+                    <li class='about'>
+                        <a>Acerca de</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Overlay que se activa cuando se muestra el menu
+            y que sirve para recibir el clic necesario para cerrar el menu -->
+            <div id='menu-overlay'></div>
+        </div>
+
+        <!-- Nav top -->
+        <div id='nav-top' class="container no-display">
+            <div class="row">
+                <div class="col-xs-2">
+                    <div id='menu-toggle' class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></div>
+                </div>
+
+                <div id='nav-top-title' class="col-xs-8"></div>
+
+                <div class="col-xs-1">
+                    <div id='search' class="glyphicon glyphicon-search" aria-hidden="true"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Map containers -->
+        <div id='map' class='no-display'>
+
+            <div class='map-zoom-14 map-container'>
+                <div class="map"></div>
+            </div>
+
+            <div class='map-zoom-15 map-container'>
+                <div class="map"></div>
+            </div>
+
+            <div class='map-zoom-16 map-container'>
+                <div class="map">
+
+                    <div id='sambil'></div>
+                    <div id='endPointer'></div>
+                </div>
+            </div>
+
+            <!-- Controles mapa -->
+            <div class='center-current-position'></div>
+            <div class='zoom-in'></div>
+            <div class='zoom-out'></div>
+        </div>
+
+
+        <!-- Nav bottom -->
+        <div id='nav-bottom' class="container no-display">
+            <div class="row">
+                <div id='show-map' class="col-xs-4 nav-bottom-button">
+                    <div class='img'></div>
+                    <div class='text'>Mapa</div>
+                </div>
+                <div id='near-me' class="col-xs-4 nav-bottom-button">
+                    <div class='img'></div>
+                    <div class='text'>Cerca</div>
+                </div>
+                <div id='report' class="col-xs-4 nav-bottom-button">
+                    <div class='img'></div>
+                    <div class='text'>Reportar</div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Search section -->
+        <div id='search-section' class="no-display">
+            <div id='nav-search' class="container">
+                <div class="row">
+                    <div class="col-xs-2">
+                        <div id='search-back' class="glyphicon glyphicon-arrow-left" aria-hidden="true"></div>
+                    </div>
+
+                    <div id='search-fields' class="col-xs-10">
+                        <div class='from'>
+                            <label>Desde</label>
+                            <input type="text" value="Tu ubicación actual" />
+                        </div>
+
+                        <div class='to'>
+                            <label>Ir a</label>
+                            <input type="text" value="" id='search-to'/>
+                        </div>
+
+                        <div class='data-path'>
+                            <div class='distance'>2 Km</div>
+                            <div class='time'>30 min</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class='search-content'>
+
+                <div class='mini-loader'></div>
+
+                <div class='search-results'>
+                    <ul class='search-list'></ul>
+
+                    <!-- Espacio al final para poder hacer clic en el último elemento -->
+                    <div style='display: block; height: 53px; width: 100%;'></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Virtual Keyboard -->
+        <div id="virtualKeyboard"></div>
+
+
+
+        <!-- Bike Stations section -->
+        <div id='bikeStations-section' class="no-display">
+            <div class='nav-top' class="container">
+                <div class="row">
+                    <div class="col-xs-2">
+                        <div id="bks-back" class="glyphicon glyphicon-arrow-left" aria-hidden="true"></div>
+                    </div>
+
+                    <div id='bks-title' class="col-xs-8">Estaciones</div>
+
+                    <div class="col-xs-1">
+                        <div id='bks-refresh' class="glyphicon glyphicon-refresh" aria-hidden="true"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class='mini-loader'></div>
+
+            <div class='bikestations'>
+                <ul class='bks-list'></ul>
+
+                <!-- Espacio al final para poder hacer clic en el último elemento -->
+                <div style='display: block; height: 53px; width: 100%;'></div>
+            </div>
+        </div>
+
+
+        <!-- Bike Roads section -->
+        <div id='bikeRoads-section' class="no-display">
+            <div class='nav-top' class="container">
+                <div class="row">
+                    <div class="col-xs-2">
+                        <div id="bkr-back" class="glyphicon glyphicon-arrow-left" aria-hidden="true"></div>
+                    </div>
+
+                    <div id='bkr-title' class="col-xs-8">Ciclovías</div>
+
+                    <div class="col-xs-1">
+                    </div>
+                </div>
+            </div>
+
+            <div class='always-show'>
+                <div>Mostrar siempre en mapa</div>
+            </div>
+
+            <div class='bikeroads'>
+
+                <ul class='bkr-list'></ul>
+
+                <!-- Espacio al final para poder hacer clic en el último elemento -->
+                <div style='display: block; height: 53px; width: 100%;'></div>
+            </div>
+        </div>
+
+
+        <!-- History section -->
+        <div id='history-section' class="no-display">
+            <div class='nav-top' class="container">
+                <div class="row">
+                    <div class="col-xs-2">
+                        <div id="history-back" class="glyphicon glyphicon-arrow-left" aria-hidden="true"></div>
+                    </div>
+
+                    <div id='history-title' class="col-xs-8">Historial</div>
+
+                    <div class="col-xs-1">
+                    </div>
+                </div>
+            </div>
+
+            <div class='history-list'>
+                <ul></ul>
+
+                <div class='no-history'>
+                    No se encontraron destinos
+                </div>
+            </div>
+        </div>
+
+        <!-- Reports section -->
+        <div id='reports-section' class="no-display">
+            <div class='nav-top' class="container">
+                <div class="row">
+                    <div class="col-xs-2">
+                        <div id="reports-back" class="glyphicon glyphicon-arrow-left" aria-hidden="true"></div>
+                    </div>
+
+                    <div id='report-title' class="col-xs-8">Reportes</div>
+
+                    <div class="col-xs-1">
+                        <div id='add-report' class="glyphicon glyphicon-plus" aria-hidden="true"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class='reports-list'>
+                <ul></ul>
+
+                <div class='no-reports'>
+                    No se encontraron reportes.
+                </div>
+            </div>
+        </div>
+
+        <!-- Add-Reports section -->
+        <div id='add-reports-section' class="no-display">
+            <div class='nav-top' class="container">
+                <div class="row">
+                    <div class="col-xs-2">
+                        <div id="add-reports-back" class="glyphicon glyphicon-arrow-left" aria-hidden="true"></div>
+                    </div>
+
+                    <div id='add-report-title' class="col-xs-8">Nuevo Reporte</div>
+
+                    <div class="col-xs-1">
+                    </div>
+                </div>
+            </div>
+
+            <div class='add-reports-form'>
+                <form id='formAddReport'>
+                    <ul>
+                    <li>
+                    <label for='asunto'>Asunto:*</label>
+                    <input type='text' id='asunto' name='asunto'/>
+                    <span id="errorAsunto" class="no-display">Máximo 30 caracteres.</span>
+                    </li>
+                    <li>
+                    <label for='descripcion'>Descripción:*</label>
+                    <textarea name="descripcion" id="descripcion" cols="30" rows="5"></textarea>
+                    <span id="errorDescripcion" class="no-display">Máximo 200 caracteres.</span>
+                    </li>
+                    <li>
+                    <label for='categoria'>Categoría: </label>
+                    <select id='categoria' name='categoria'>
+                        <option value=''>Seleccione</option>
+                        <option value='c1'>c1</option>
+                        <option value='c2'>c2</option>
+                        <option value='c3'>c3</option>
+                        <option value='c4'>c4</option>
+                        <option value='otro'>otro</option>
+                    </select>
+                    <span id="errorCategoria" class="no-display">Seleccione una categoría.</span>
+                    </li>
+                    </ul>
+                    <button class="btn" type="submit">Reportar</button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- Detail Reports section -->
+        <div id='detail-reports-section' class="no-display">
+            <div class='nav-top' class="container">
+                <div class="row">
+                    <div class="col-xs-2">
+                        <div id="detail-reports-back" class="glyphicon glyphicon-arrow-left" aria-hidden="true"></div>
+                    </div>
+
+                    <div id='detail-report-title' class="col-xs-8">Detalles Reporte</div>
+
+                    <div class="col-xs-1">
+                    </div>
+                </div>
+            </div>
+
+            <div id='detail-reports-content'>
+            </div>
+            <div id="answer-reports">
+            </div>
+
+        </div>
+
+
+        <!-- About section -->
+        <div id='about-section' class="no-display">
+            <div class='nav-top' class="container">
+                <div class="row">
+                    <div class="col-xs-2">
+                        <div id="about-back" class="glyphicon glyphicon-arrow-left" aria-hidden="true"></div>
+                    </div>
+
+                    <div id='about-title' class="col-xs-8">Acerca de</div>
+
+                    <div class="col-xs-1">
+                    </div>
+                </div>
+            </div>
+
+            <div class='logo'>
+                <img src='img/logo-medium.png' />
+            </div>
+
+            <div class='msj'>
+                <b>Biciamigos</b> nace para brindar un servicio de préstamo de bicicletas en la ciudad de Caracas. Hemos creado de esta forma una aplicación para que puedas desplazarte por la ciudad, planificar rutas, revisar el estado de las estaciones de bicicletas, ver cuáles son las estaciones más cercanas, entre muchas cosas más
+
+                <br /><br />
+
+                Actualmente sólo operamos en el municipio Chacao, pero esperamos ampliar el servicio a otros municipios en los próximos meses.
+            </div>
+
+            <div class='copyright'>
+                © Copyright 2016
+                <br />
+                Biciamigos Foundation
+            </div>
+        </div>
+
+    </body>
+</html>

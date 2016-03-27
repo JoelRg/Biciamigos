@@ -1,0 +1,489 @@
+/* Maps */
+#map {
+    background: #FFF;
+    width: 360px;
+    height: 640px;
+    overflow: hidden;
+    position: relative;
+}
+
+#map .center-current-position,
+#map .zoom-in,
+#map .zoom-out {
+    cursor: pointer;
+    position: fixed;
+    z-index: 200;
+    width: 36px;
+    height: 36px;
+    right: 8px;
+}
+
+#map .center-current-position {
+    background: url('../img/center-current-position.png') no-repeat;
+    bottom: 124px;
+}
+
+#map .zoom-in {
+    background: url('../img/zoom-in-zoom-out.png') no-repeat;
+    bottom: 92px;
+    height: 33px;
+}
+
+#map .zoom-out {
+    background: url("../img/zoom-in-zoom-out.png") no-repeat scroll 0 -33px;
+    bottom: 60px;
+    height: 34px;
+    z-index: 199;
+}
+
+#map .zoom-in.dimmed,
+#map .zoom-out.dimmed {
+    opacity: 0.5;
+}
+
+#map .map .current-position {
+    cursor: pointer;
+    position: absolute;
+    z-index: 100;
+    border: 1px dashed transparent;
+    border-radius: 20px;
+    -webkit-transition: border-radius 400ms linear 0s, border 400ms linear 0s;
+    transition: border-radius 400ms linear 0s, border 400ms linear 0s;
+}
+
+
+#map .map .current-position.blinkOn {
+    border: 1px dashed #005aff;
+    border-radius: 0;
+}
+
+#map .map .current-position.blinkOff {
+    border: 1px dashed #005aff;
+    border-radius: 20px;
+}
+
+
+
+
+#map .map-container {
+    z-index: 50;
+    -webkit-transition: transform 600ms ease-in, opacity 600ms ease-in;
+    transition: transform 600ms ease-in, opacity 600ms ease-in;
+}
+
+#map .map-container.onTop {
+    z-index: 51;
+}
+
+#map .map-container.map-zoom-in {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    opacity: 0;
+}
+
+#map .map-container.map-zoom-out {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0;
+}
+
+/*
+  overflow-x = (370px - 360px) = 10px ---> width: (10px + 360px + 10px) = 380px; left: -10px;
+  overflow-y = (700px - 640px) = 60px  ---> height: (60px + 640px + 60px) = 760px; top: -60px;
+*/
+#map .map-zoom-14 {
+    width: 380px;
+    height: 760px;
+    left: -10px;
+    top: -60px;
+    position: absolute;
+}
+
+#map .map-zoom-14 .map {
+    background: url('../img/maps/zoom-14.jpg') no-repeat;
+    width: 370px;
+    height: 700px;
+    left: 10px;
+    top: 60px;
+    position: relative;
+}
+
+#map .map-zoom-14 .current-position {
+    width: 16px;
+    height: 16px;
+    background: transparent url("../img/current-position-sprite.png") no-repeat -11px -94px;
+}
+
+
+
+/*
+  overflow-x = (1000px - 360px) = 640px ---> width: (640px + 360px + 640px) = 1640px; left: -640px;
+  overflow-y = (700px - 640px) = 60px   ---> height: (60px + 640px + 60px) = 760px; top: -60px;
+*/
+#map .map-zoom-15 {
+    width: 1640px;
+    height: 760px;
+    left: -640px;
+    top: -60px;
+    position: absolute;
+}
+
+#map .map-zoom-15 .map {
+    background: url('../img/maps/zoom-15.jpg') no-repeat;
+    width: 1000px;
+    height: 700px;
+    left: 640px;
+    top: 60px;
+    position: relative;
+}
+
+#map .map-zoom-15 .current-position {
+    width: 25px;
+    height: 25px;
+    background: transparent url("../img/current-position-sprite.png") no-repeat -6px -50px;
+}
+
+
+
+/*
+  overflow-x = (1980px - 360px) = 1620px ---> width: (1620px + 360px + 1620px) = 3600px; left: -1620px;
+  overflow-y = (1108px - 640px) = 468px  ---> height: (468px + 640px + 468px) = 1576px; top: -468px;
+*/
+#map .map-zoom-16 {
+    width: 3600px;
+    height: 1576px;
+    left: -1620px;
+    top: -468px;
+    position: absolute;
+}
+
+#map .map-zoom-16 .map {
+    background: url('../img/maps/zoom-16.jpg') no-repeat;
+    width: 1980px;
+    height: 1108px;
+    left: 1620px;
+    top: 468px;
+    position: relative;
+}
+
+#map .map-zoom-16 .current-position {
+    width: 37px;
+    height: 37px;
+    background: transparent url("../img/current-position-sprite.png") no-repeat;
+}
+
+
+
+
+/* Tooltips */
+.tpd-skin-dark .tpd-content,
+.tpd-skin-dark .tpd-content * {
+    color: #FFF;
+}
+
+/*
+.tpd-skin-dark .tpd-content,
+.tpd-skin-dark .tpd-content * {
+    color: #000;
+}
+
+.tpd-skin-dark .tpd-background {
+    background-color: #fff !important;
+    border: 1px solid #ccc !important;
+}
+
+.tpd-background-shadow {
+    box-shadow: 0 0 3px #bebebe;
+}
+
+.tpd-frame-top .tpd-stem-triangle,
+.tpd-frame-bottom .tpd-stem-triangle {
+    border-top-color: #fff !important;
+    border-bottom-color: #fff !important;
+}
+
+.tpd-frame-left .tpd-stem-triangle,
+.tpd-frame-right .tpd-stem-triangle {
+    border-left-color: #fff !important;
+    border-right-color: #fff !important;
+}
+*/
+
+
+/* Bike stations */
+#map .map .bike-station {
+    cursor: pointer;
+    box-shadow: 0 0 2px #444;
+    position: absolute;
+    z-index: 99;
+}
+
+#map .map-zoom-14 .bike-station {
+    width: 16px;
+    height: 14px;
+    background: transparent url("../img/bikestations-sprite.png") no-repeat 0px -90px;
+}
+
+#map .map-zoom-15 .bike-station {
+    width: 22px;
+    height: 18px;
+    background: transparent url("../img/bikestations-sprite.png") no-repeat 0px -50px;
+}
+
+#map .map-zoom-16 .bike-station {
+    width: 30px;
+    height: 24px;
+    background: transparent url("../img/bikestations-sprite.png") no-repeat;
+}
+
+
+.bikestation-tooltip-text {
+
+}
+
+.bikestation-tooltip-text * {
+    font-size: 10px;
+}
+
+#map .map-zoom-16 .bikestation-tooltip-text * {
+    font-size: 12px;
+}
+
+.bikestation-tooltip-text .name {
+    text-align: center;
+}
+
+.bikestation-tooltip-text table.data {
+    margin-top: 5px;
+}
+
+.bikestation-tooltip-text table.data .number {
+    padding-left: 5px;
+}
+
+
+
+
+/* Bike Roads (ciclovias) */
+#map .map .bike-road {
+    cursor: pointer;
+    position: absolute;
+    z-index: 90;
+}
+
+#map .map-zoom-14 #bkr-tamanaco-14.bike-road {
+    width: 87px;
+    height: 13px;
+    background: transparent url("../img/maps/bike-roads/01-tamanaco-map-14.png") no-repeat;
+}
+
+#map .map-zoom-15 #bkr-tamanaco-15.bike-road {
+    width: 186px;
+    height: 29px;
+    background: transparent url("../img/maps/bike-roads/01-tamanaco-map-15.png") no-repeat;
+}
+
+#map .map-zoom-16 #bkr-tamanaco-16.bike-road {
+    width: 354px;
+    height: 57px;
+    background: transparent url("../img/maps/bike-roads/01-tamanaco-map-16.png") no-repeat;
+}
+
+#map .map-zoom-14 #bkr-campoalegreavenida4-14.bike-road {
+    width: 16px;
+    height: 67px;
+    background: transparent url("../img/maps/bike-roads/02-campo-alegre-avenida-4-map-14.png") no-repeat;
+}
+
+#map .map-zoom-15 #bkr-campoalegreavenida4-15.bike-road {
+    width: 34px;
+    height: 138px;
+    background: transparent url("../img/maps/bike-roads/02-campo-alegre-avenida-4-map-15.png") no-repeat;
+}
+
+#map .map-zoom-16 #bkr-campoalegreavenida4-16.bike-road {
+    width: 67px;
+    height: 277px;
+    background: transparent url("../img/maps/bike-roads/02-campo-alegre-avenida-4-map-16.png") no-repeat;
+}
+
+#map .map-zoom-14 #bkr-avlibertador-14.bike-road {
+    width: 99px;
+    height: 14px;
+    background: transparent url("../img/maps/bike-roads/03-av-libertador-map-14.png") no-repeat;
+}
+
+#map .map-zoom-15 #bkr-avlibertador-15.bike-road {
+    width: 205px;
+    height: 31px;
+    background: transparent url("../img/maps/bike-roads/03-av-libertador-map-15.png") no-repeat;
+}
+
+#map .map-zoom-16 #bkr-avlibertador-16.bike-road {
+    width: 407px;
+    height: 55px;
+    background: transparent url("../img/maps/bike-roads/03-av-libertador-map-16.png") no-repeat;
+}
+
+#map .map-zoom-14 #bkr-avjuanpabloii-14.bike-road {
+    width: 15px;
+    height: 44px;
+    background: transparent url("../img/maps/bike-roads/04-av-juan-pablo-ii-map-14.png") no-repeat;
+}
+
+#map .map-zoom-15 #bkr-avjuanpabloii-15.bike-road {
+    width: 30px;
+    height: 87px;
+    background: transparent url("../img/maps/bike-roads/04-av-juan-pablo-ii-map-15.png") no-repeat;
+}
+
+#map .map-zoom-16 #bkr-avjuanpabloii-16.bike-road {
+    width: 60px;
+    height: 183px;
+    background: transparent url("../img/maps/bike-roads/04-av-juan-pablo-ii-map-16.png") no-repeat;
+}
+
+#map .map-zoom-14 #bkr-avjosefelixsosa-14.bike-road {
+    width: 40px;
+    height: 8px;
+    background: transparent url("../img/maps/bike-roads/05-av-jose-felix-sosa-map-14.png") no-repeat;
+}
+
+#map .map-zoom-15 #bkr-avjosefelixsosa-15.bike-road {
+    width: 81px;
+    height: 15px;
+    background: transparent url("../img/maps/bike-roads/05-av-jose-felix-sosa-map-15.png") no-repeat;
+}
+
+#map .map-zoom-16 #bkr-avjosefelixsosa-16.bike-road {
+    width: 158px;
+    height: 27px;
+    background: transparent url("../img/maps/bike-roads/05-av-jose-felix-sosa-map-16.png") no-repeat;
+}
+
+#map .map-zoom-14 #bkr-avsantateresadejesus-14.bike-road {
+    width: 16px;
+    height: 45px;
+    background: transparent url("../img/maps/bike-roads/06-av-santa-teresa-de-jesus-map-14.png") no-repeat;
+}
+
+#map .map-zoom-15 #bkr-avsantateresadejesus-15.bike-road {
+    width: 34px;
+    height: 92px;
+    background: transparent url("../img/maps/bike-roads/06-av-santa-teresa-de-jesus-map-15.png") no-repeat;
+}
+
+#map .map-zoom-16 #bkr-avsantateresadejesus-16.bike-road {
+    width: 63px;
+    height: 187px;
+    background: transparent url("../img/maps/bike-roads/06-av-santa-teresa-de-jesus-map-16.png") no-repeat;
+}
+
+#map .map-zoom-14 #bkr-lacastellanatransversal4-14.bike-road {
+    width: 96px;
+    height: 6px;
+    background: transparent url("../img/maps/bike-roads/07-la-castellana-transversal-4-map-14.png") no-repeat;
+}
+
+#map .map-zoom-15 #bkr-lacastellanatransversal4-15.bike-road {
+    width: 189px;
+    height: 12px;
+    background: transparent url("../img/maps/bike-roads/07-la-castellana-transversal-4-map-15.png") no-repeat;
+}
+
+#map .map-zoom-16 #bkr-lacastellanatransversal4-16.bike-road {
+    width: 379px;
+    height: 20px;
+    background: transparent url("../img/maps/bike-roads/07-la-castellana-transversal-4-map-16.png") no-repeat;
+}
+
+#map .map-zoom-14 #bkr-avluisroche-14.bike-road {
+    width: 5px;
+    height: 78px;
+    background: transparent url("../img/maps/bike-roads/08-av-luis-roche-map-14.png") no-repeat;
+}
+
+#map .map-zoom-15 #bkr-avluisroche-15.bike-road {
+    width: 9px;
+    height: 153px;
+    background: transparent url("../img/maps/bike-roads/08-av-luis-roche-map-15.png") no-repeat;
+}
+
+#map .map-zoom-16 #bkr-avluisroche-16.bike-road {
+    width: 18px;
+    height: 300px;
+    background: transparent url("../img/maps/bike-roads/08-av-luis-roche-map-16.png") no-repeat;
+}
+
+#map .map-zoom-14 #bkr-lospalosgrandestransversal2-14.bike-road {
+    width: 66px;
+    height: 5px;
+    background: transparent url("../img/maps/bike-roads/09-los-palos-grandes-transversal-2-map-14.png") no-repeat;
+}
+
+#map .map-zoom-15 #bkr-lospalosgrandestransversal2-15.bike-road {
+    width: 135px;
+    height: 13px;
+    background: transparent url("../img/maps/bike-roads/09-los-palos-grandes-transversal-2-map-15.png") no-repeat;
+}
+
+#map .map-zoom-16 #bkr-lospalosgrandestransversal2-16.bike-road {
+    width: 268px;
+    height: 20px;
+    background: transparent url("../img/maps/bike-roads/09-los-palos-grandes-transversal-2-map-16.png") no-repeat;
+}
+
+#map .map-zoom-14 #bkr-lospalosgrandestransversal4-14.bike-road {
+    width: 60px;
+    height: 2px;
+    background: transparent url("../img/maps/bike-roads/10-los-palos-grandes-transversal-4-map-14.png") no-repeat;
+}
+
+#map .map-zoom-15 #bkr-lospalosgrandestransversal4-15.bike-road {
+    width: 117px;
+    height: 5px;
+    background: transparent url("../img/maps/bike-roads/10-los-palos-grandes-transversal-4-map-15.png") no-repeat;
+}
+
+#map .map-zoom-16 #bkr-lospalosgrandestransversal4-16.bike-road {
+    width: 236px;
+    height: 10px;
+    background: transparent url("../img/maps/bike-roads/10-los-palos-grandes-transversal-4-map-16.png") no-repeat;
+}
+
+#map .map-zoom-14 #bkr-lospalosgrandesavenida4-14.bike-road {
+    width: 3px;
+    height: 67px;
+    background: transparent url("../img/maps/bike-roads/11-los-palos-grandes-avenida-4-map-14.png") no-repeat;
+}
+
+#map .map-zoom-15 #bkr-lospalosgrandesavenida4-15.bike-road {
+    width: 6px;
+    height: 132px;
+    background: transparent url("../img/maps/bike-roads/11-los-palos-grandes-avenida-4-map-15.png") no-repeat;
+}
+
+#map .map-zoom-16 #bkr-lospalosgrandesavenida4-16.bike-road {
+    width: 10px;
+    height: 266px;
+    background: transparent url("../img/maps/bike-roads/11-los-palos-grandes-avenida-4-map-16.png") no-repeat;
+}
+
+
+
+.bikeroad-tooltip-text {
+
+}
+
+.bikeroad-tooltip-text * {
+    font-size: 10px;
+}
+
+#map .map-zoom-16 .bikeroad-tooltip-text * {
+    font-size: 12px;
+}
+
+.bikeroad-tooltip-text .name {
+    text-align: center;
+}
+
